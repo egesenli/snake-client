@@ -11,6 +11,7 @@ const connect = function () {
   conn.setEncoding("utf8");
   conn.on('connect', () => {
     console.log("Connected to the snake server.");
+    conn.write('Name: SNK');
   });
 
   conn.on('data', (data) => {
