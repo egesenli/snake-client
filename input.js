@@ -30,6 +30,20 @@ const handleUserInput = (key) => {
   if (key === 'd' || key === 'D') {
     connection.write("Move: right");
   }
+  //special characters for canned messages
+  if (key === 'f' || key === 'F') {
+    connection.write('Say: Oops, wrong button!');
+  }
+  if (key === 'q' || key === 'Q') {
+    connection.write('Say: Seriously?');
+  }
+  if (key === 'e' || key === 'E') {
+    connection.write('Say: Why you keep pushing wrong buttons?');
+  }
+  if (key === 'x' || key === 'X') {
+    connection.write('Say: Do you need glasses?');
+  }
 };
+
 
 module.exports = { setupInput };
