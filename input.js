@@ -1,3 +1,6 @@
+const { MOVE_UP, MOVE_LEFT, MOVE_DOWN, MOVE_RIGHT, MESSAGES } = require('./constants');
+
+
 let connection;
 
 const setupInput = function(conn) {
@@ -19,31 +22,19 @@ const handleUserInput = (key) => {
     process.exit();
   }
   if (key === 'w' || key === 'W') {
-    connection.write("Move: up");
+    connection.write(MOVE_UP);
   }
   if (key === 'a' || key === 'A' ) {
-    connection.write("Move: left");
+    connection.write(MOVE_LEFT);
   }
   if (key === 's' || key === 'S') {
-    connection.write("Move: down");
+    connection.write(MOVE_DOWN);
   }
   if (key === 'd' || key === 'D') {
-    connection.write("Move: right");
+    connection.write(MOVE_RIGHT);
   }
-  //special characters for canned messages
-  if (key === 'f' || key === 'F') {
-    connection.write('Say: Oops, wrong button!');
+  if (MESSAGES[key]) {
+    connection.write(MESSAGES[key]);
   }
-  if (key === 'q' || key === 'Q') {
-    connection.write('Say: Seriously?');
-  }
-  if (key === 'e' || key === 'E') {
-    connection.write('Say: Why you keep pushing wrong buttons?');
-  }
-  if (key === 'x' || key === 'X') {
-    connection.write('Say: Do you need glasses?');
-  }
-};
-
-
+}
 module.exports = { setupInput };
