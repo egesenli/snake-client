@@ -21,8 +21,6 @@ const connect = function () {
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
 
 //EXPORT
 module.exports = { connect };
