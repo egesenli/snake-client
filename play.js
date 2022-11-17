@@ -12,6 +12,11 @@ const connect = function () {
   conn.on('connect', () => {
     console.log("Connected to the snake server.");
   });
+
+  conn.on('data', (data) => {
+    console.log('Server says: ', data);
+  });
+  
   return conn;
 };
 
