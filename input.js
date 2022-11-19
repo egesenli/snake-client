@@ -5,7 +5,7 @@ let connection;
 
 const setupInput = function(conn) {
   connection = conn;
-const stdin = process.stdin;
+  const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
@@ -24,7 +24,7 @@ const handleUserInput = (key) => {
   if (key === 'w' || key === 'W') {
     connection.write(MOVE_UP);
   }
-  if (key === 'a' || key === 'A' ) {
+  if (key === 'a' || key === 'A') {
     connection.write(MOVE_LEFT);
   }
   if (key === 's' || key === 'S') {
